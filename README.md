@@ -13,7 +13,9 @@ adapter speaks lemonfiber's `proxy.front` contract for, and pins it by digest.
 | Path | What it is |
 | --- | --- |
 | `Dockerfile` | The image, from Caddy's own pinned by digest |
-| `config/caddy/Caddyfile` | The configuration the image starts with |
+
+The files it starts with are `plugin-caddy`'s, under `config/caddy/` there, written into
+its configuration directory when lemonfiber installs it.
 
 ## How it is published
 
