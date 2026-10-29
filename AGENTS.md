@@ -15,6 +15,10 @@ The image of the proxy: `ghcr.io/lemonfiber/caddy`, which `plugin-caddy` runs as
 
 ## The rules you cannot break
 
+- **Caddy starts from `/etc/caddy/caddy.json`, a JSON configuration.** The adapter in
+  `plugin-caddy` writes that file from lemonfiber's routing table, Caddy only reads it,
+  and its admin API is off in every configuration written, so no value a route carries
+  is read as Caddyfile text.
 - **The image starts with no added kernel capability.** The `Dockerfile` removes the
   file capability Caddy's binary carries, and runs as a non-root user.
 - **Every base image is pinned by tag and digest** (ADR-0025).
