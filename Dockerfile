@@ -3,3 +3,4 @@ RUN apk add --no-cache libcap \
  && setcap -r /usr/bin/caddy \
  && apk del --no-cache libcap
 USER 1000:1000
+CMD ["caddy", "run", "--config", "/etc/caddy/caddy.json"]
